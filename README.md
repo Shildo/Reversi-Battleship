@@ -45,5 +45,5 @@ This will launch the application. From there, you can select either Reversi or B
 
 ### License
 
-This project is licensed under the MIT License. See the `[LICENSE](LICENSE)` file for more details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 

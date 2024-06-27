@@ -1,0 +1,282 @@
+.body {
+    position: relative;
+    background: #90bbe09a;
+}
+
+
+#message {
+    position: relative;
+}
+
+.battlefields {
+    padding-top: 100px;
+    min-width: 990px;
+    max-width: 1080px;
+    position: relative;
+    margin: auto;
+    z-index: 1;
+    min-height: 100%;
+    user-select: none;
+}
+
+.battlefield-table-placeholder {
+    min-height: 340px;
+    min-width: 340px;
+}
+
+.self {
+    float: left;
+    margin-left: 20px;
+}
+
+.enemy {
+    position: relative;
+    margin-left: 700px;
+}
+
+.battlefield-table {
+    margin: 0;
+    border-collapse: collapse;
+    cursor: default;
+    display: inline-block;
+    position: relative;
+    background-color: #31c5ff;
+}
+
+.battlefield_wait {
+    opacity: .4;
+    cursor: default;
+    pointer-events: none;
+}
+
+.battlefield-cell {
+    border: 2px solid #1221a1;
+    padding: 0;
+}
+
+.battlefield-cell-content {
+    color: transparent;
+    position: relative;
+    height: 3em;
+    width: 3em;
+}
+
+.marker {
+    color: black !important;
+    position: absolute;
+    font-size: 15px;
+    z-index: -1;
+}
+
+.marker__row {
+    left: -3em;
+    width: 2em;
+    text-align: right;
+    top: 1em;
+    height: 1em;
+    pointer-events: none;
+}
+
+.marker__col {
+    top: -2em;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+}
+
+.port {
+    position: absolute;
+    width: 31.4em;
+    height: 282px;
+    background: rgb(255, 255, 255);
+    bottom: -338px;
+    right: 558px;
+}
+
+.ship {
+    z-index: 2;
+    left: 0;
+    top: 0;
+    border: 2px solid rgb(255, 0, 0);
+    background: rgb(255, 166, 1);
+    border-radius: 0;
+    position: absolute !important;
+    margin: -2px;
+}
+
+.ship-cell {
+    z-index: 2;
+    left: 0;
+    top: 0;
+    border: 3px solid rgb(255, 0, 0);
+    background: rgb(255, 166, 1);
+    border-radius: 0;
+    margin: -2px;
+}
+
+.ship.placed {
+    margin-top: -2px !important;
+    margin-left: -2px !important;
+}
+
+.ship[name="carrier"][position="h"] {
+    width: 15em;
+    height: 3em;
+    padding-right: 8px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.ship[name="carrier"][position="v"] {
+    width: 3em;
+    height: 15em;
+    padding-bottom: 8px;
+}
+
+.ship[name="battleship"][position="h"] {
+    width: 12em;
+    height: 3em;
+    margin-top: 80px;
+    margin-left: 10px;
+    padding-right: 6px;
+}
+
+.ship[name="battleship"][position="v"] {
+    width: 3em;
+    height: 12em;
+    padding-bottom: 6px;
+}
+
+
+.ship[name="cruiser"][position="h"] {
+    width: 9em;
+    height: 3em;
+    padding-right: 4px;
+    margin-top: 150px;
+    margin-left: 10px;
+}
+
+.ship[name="cruiser"][position="v"] {
+    width: 3em;
+    height: 9em;
+    padding-bottom: 4px;
+}
+
+.ship[name="destroyer"][position="h"] {
+    width: 9em;
+    height: 3em;
+    padding-right: 4px;
+    margin-top: 150px;
+    margin-left: 180px;
+}
+
+.ship[name="destroyer"][position="v"] {
+    width: 3em;
+    height: 9em;
+    padding-bottom: 4px;
+}
+
+.ship[name="frigate"][position="h"] {
+    width: 6em;
+    height: 3em;
+    padding-right: 2px;
+    margin-top: 220px;
+    margin-left: 10px;
+}
+
+.ship[name="frigate"][position="v"] {
+    width: 3em;
+    height: 6em;
+    padding-bottom: 2px;
+}
+
+.draggable {
+    cursor: move !important;
+}
+
+.draggable.dragging {
+    /* opacity: .5; */
+    cursor: pointer;
+}
+
+.enemy .empty:hover .battlefield-cell-content {
+    border: 2px solid #c03434;
+    position: relative;
+    background: rgba(0, 0, 0, 0.2);
+    margin: -2px;
+    cursor: pointer;
+}
+
+.miss {
+    position: relative;
+    background: rgb(216, 216, 216);
+    pointer-events: none;
+}
+
+
+.hit {
+    position: relative;
+    background: rgb(255, 168, 168);
+    pointer-events: none;
+}
+
+
+.hit .battlefield-cell-content::after,
+.hit .battlefield-cell-content::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    background: red;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg)
+}
+
+.hit .battlefield-cell-content::before {
+    left: 48%;
+    width: 4px;
+    top: -0.7px;
+    height: 100%;
+    margin-top: 1px;
+}
+
+.hit .battlefield-cell-content::after {
+    top: 47%;
+    height: 4px;
+    left: 2%;
+    width: 100%;
+    margin-left: -1px;
+}
+
+.sunk {
+    position: relative;
+    background: rgb(255, 0, 0);
+    border: 3px solid rgb(126, 0, 0);
+    pointer-events: none;
+}
+
+#endMessage {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    margin: 0;
+    margin: 0;
+    padding: 0;
+    transform: translateX(-50%);
+    font-size: 500%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#code {
+    background-color: #70e9eb;
+    color: black;
+    cursor: pointer;
+    font-size: 100%;
+}
+#expirationMessage {
+    color: rgb(21,21,21);
+    position: absolute;
+    top: 250px;
+    left: 35%;
+}

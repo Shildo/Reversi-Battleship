@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/battleship.css">
+    <title>Battleship Match</title>
+</head>
+
+<body class="body" id="body" onload="verify()">
+    <div id = "match"> 
+        <label id="player"></label>
+        <h1 id="message"></h1>
+        <div class="battlefields" id="battlefields-container"></div>
+        <input id="button" type="button" value="Ready" disabled onclick="start()">
+        <label id="turn"></label>
+    </div>
+    <h1 id="endMessage"></h1>
+</body>
+
+<script src="../../js/matches/battleshipMatch.js"></script>
+
+</html>

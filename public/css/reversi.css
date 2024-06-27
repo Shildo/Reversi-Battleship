@@ -1,0 +1,96 @@
+body {
+    background-color: rgb(147, 93, 23);
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 4em));
+    grid-template-rows: repeat(8, minmax(0, 4em));
+    grid-gap: 5px;
+    background-color: #00540d;
+    padding: 5px;
+    min-width: 500px;
+    max-width: 1059px;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    margin: auto;
+}
+
+.wait {
+    opacity: .4;
+    cursor: default;
+    pointer-events: none;
+}
+
+.cell {
+    font-size: 0;
+    text-align: center;
+    padding: inherit;
+    background-color: #43c373;
+    justify-content: center;
+}
+
+.cell.empty:hover {
+    border: 5px solid #2600ff;
+    position: relative;
+    background: rgba(0, 0, 0, 0.1);
+    margin: -5px;
+    cursor: pointer;
+}
+
+.bussy {
+    pointer-events: none;
+}
+
+.piece {
+    position: relative;
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+}
+
+
+.piece.black {
+    background: black;
+    box-shadow: rgb(0 0 0 / 54%) 3px 4px 3px 1px, rgb(117 151 103 / 43%) 0px -3px 0px inset;
+}
+
+.piece.white {
+    background: white;
+    box-shadow: rgb(0 0 0 / 54%) 3px 4px 3px 1px, rgb(117 151 103 / 43%) 0px -3px 0px inset;
+}
+
+.endMessage {
+    font-size: 50px;
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 25%;
+    text-align: center;
+    padding: 10px;
+    z-index: 9;
+    opacity: 0.8;
+    min-width: 537px;
+    max-width: 1059px;
+}
+
+.botoncito {
+    background-color: #d19343;
+    color: black;
+    cursor: pointer;   
+}
+
+#code {
+    background-color: #d19343;
+    color: black;
+    cursor: pointer;
+    font-size: 100%;
+}
+#expirationMessage {
+    color: rgb(21, 21, 21);
+    position: absolute;
+    top: 250px;
+    left: 35%;
+}
